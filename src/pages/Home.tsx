@@ -111,7 +111,6 @@ const Home: React.FC = () => {
         transition: "background-color 0.3s ease",
       }}
     >
-      {/* Заголовок */}
       <Typography
         variant="h4"
         fontWeight="bold"
@@ -121,7 +120,6 @@ const Home: React.FC = () => {
         Cryptocurrency Prices
       </Typography>
 
-      {/* Панель пошуку та кнопка фільтрів */}
       <Card
         sx={{
           mb: 3,
@@ -137,25 +135,23 @@ const Home: React.FC = () => {
             sx={{
               display: "flex",
               flexDirection: "row",
-              alignItems: "stretch", // однакова висота
+              alignItems: "stretch", 
               gap: 2,
             }}
           >
-            {/* Пошук */}
             <Box sx={{ flex: 1 }}>
               <SearchBar
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                sx={{ height: "40px" }} // щоб збігалося з кнопкою
+                sx={{ height: "40px" }} 
               />
             </Box>
           
-            {/* Кнопка */}
             <Button
               onClick={() => setFiltersOpen((prev) => !prev)}
               startIcon={filtersOpen ? <ExpandLess /> : <ExpandMore />}
               sx={{
-                height: "40px", // така ж, як SearchBar
+                height: "40px", 
                 borderRadius: "8px",
                 px: 2.5,
                 backgroundColor: theme.palette.primary.main,
@@ -185,7 +181,6 @@ const Home: React.FC = () => {
         </CardContent>
       </Card>
 
-      {/* Таблиця */}
       {loading ? (
         <Box display="flex" justifyContent="center" mt={4}>
           <CircularProgress />

@@ -49,7 +49,6 @@ const Header: React.FC = () => {
       }}
     >
       <Toolbar sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-        {/* Логотип */}
         <Typography
           variant="h6"
           component={RouterLink}
@@ -116,7 +115,6 @@ const Header: React.FC = () => {
           })}
         </Box>
 
-        {/* Перемикач теми */}
         <IconButton
           onClick={() => dispatch(toggleTheme())}
           sx={{

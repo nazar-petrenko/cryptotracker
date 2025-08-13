@@ -6,8 +6,6 @@ interface WatchlistState {
   ids: string[];
 }
 
-// Початковий стан тепер завжди однаковий — пустий масив.
-// Завантаження даних з localStorage тепер відбувається на рівні store.
 const initialState: WatchlistState = {
   ids: [],
 };
@@ -22,11 +20,11 @@ const watchlistSlice = createSlice({
       } else {
         state.ids.push(action.payload);
       }
-      // ВИДАЛЕНО: saveState(state.ids);
+
     },
     removeFromWatchlist: (state, action: PayloadAction<string>) => {
       state.ids = state.ids.filter((id) => id !== action.payload);
-      // ВИДАЛЕНО: saveState(state.ids);
+
     },
   },
 });

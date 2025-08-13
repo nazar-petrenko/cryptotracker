@@ -69,14 +69,12 @@ const CryptoTable: React.FC<Props> = ({ coins, watchlist, toggleWatchlist }) => 
 
             return (
               <TableRow key={coin.id} hover>
-                {/* Watchlist toggle */}
                 <TableCell>
                   <IconButton onClick={() => toggleWatchlist(coin.id)}>
                     {isInWatchlist ? <StarIcon color="warning" /> : <StarBorderIcon />}
                   </IconButton>
                 </TableCell>
 
-                {/* Coin info */}
                 <TableCell>
                   <Link
                     to={`/coin/${coin.id}`}
@@ -107,19 +105,16 @@ const CryptoTable: React.FC<Props> = ({ coins, watchlist, toggleWatchlist }) => 
                   </Link>
                 </TableCell>
 
-                {/* Price */}
                 <TableCell>
                   ${coin.current_price.toLocaleString()}
                 </TableCell>
 
-                {/* 24h Change */}
                 {!isMobile && (
                   <TableCell sx={{ color: priceChangeColor }}>
                     {coin.price_change_percentage_24h.toFixed(2)}%
                   </TableCell>
                 )}
 
-                {/* Market Cap */}
                 {!isMobile && (
                   <TableCell>
                     ${coin.market_cap.toLocaleString()}

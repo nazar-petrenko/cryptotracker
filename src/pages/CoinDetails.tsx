@@ -165,7 +165,6 @@ const CoinDetails: React.FC = () => {
 
   return (
     <Box>
-      {/* Заголовок */}
       <Stack direction="row" alignItems="center" spacing={2} mb={3}>
         <img src={coin.image?.large} alt={coin.name} width={60} />
         <Typography variant="h4" fontWeight={700}>
@@ -176,7 +175,6 @@ const CoinDetails: React.FC = () => {
         </Typography>
       </Stack>
 
-      {/* Перемикач періодів */}
       <ToggleButtonGroup
         color="primary"
         value={days}
@@ -189,7 +187,6 @@ const CoinDetails: React.FC = () => {
         <ToggleButton value={90}>90d</ToggleButton>
       </ToggleButtonGroup>
 
-      {/* Статистика */}
       <Grid container spacing={3} mb={4}>
         {[
           { label: "Market Cap", value: coin.market_data?.market_cap?.usd },
@@ -230,7 +227,6 @@ const CoinDetails: React.FC = () => {
         ))}
       </Grid>
 
-      {/* Графіки */}
       <Grid container spacing={4} direction="column">
         <Grid item xs={12}>
           {renderChart("price", priceColor, `Price (Last ${days} Days)`)}
@@ -243,7 +239,6 @@ const CoinDetails: React.FC = () => {
         </Grid>
       </Grid>
 
-      {/* Де купити */}
       {coin.links?.homepage && coin.links.homepage[0] && (
         <>
           <Typography variant="h6" mt={5} gutterBottom>

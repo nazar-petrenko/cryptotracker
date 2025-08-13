@@ -40,7 +40,6 @@ const validationSchema = Yup.object().shape({
     .transform((value, originalValue) => (originalValue === "" ? null : value))
     .nullable()
     .min(0, "Має бути ≥ 0")
-    // FIX: Використовуємо деструктуризацію масиву для отримання значення minPrice
     .when("minPrice", ([minPrice]: (number | null)[], schema) => {
       return minPrice != null 
         ? schema.min(minPrice, "Максимальна ціна має бути ≥ мінімальної") 
